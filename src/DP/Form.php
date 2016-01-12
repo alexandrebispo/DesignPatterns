@@ -3,8 +3,9 @@
 namespace DP;
 
 use DP\Contracts\{FormElement, FormInterface};
+use DP\Elements\FieldContainer;
 
-class Form implements FormElement, FormInterface
+class Form extends FieldContainer implements FormElement, FormInterface
 {
     protected $validator;
 
@@ -61,25 +62,6 @@ class Form implements FormElement, FormInterface
         $this->action = $action;
 
         return $this;
-    }
-
-    /**
-     * @param FormElement $field
-     * @return $this
-     */
-    public function addField(FormElement $field)
-    {
-        $this->fields[] = $field;
-
-        return $this;
-    }
-
-    /**
-     * @return FormElement[]
-     */
-    public function getFields()
-    {
-        return $this->fields;
     }
 
     /**

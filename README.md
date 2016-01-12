@@ -17,3 +17,4 @@ Para executar o projeto digite:
 > php -S localhost:8000
 
 O projeto está atualizado com o PHP e precisa do PHP versão 7.0.0 no mínimo para executar corretamente. 
+Visitem o Blog da [School of Net](http://www.schoolofnet.com/categoria/php-7/) para saber das novidades do PHP 7.
