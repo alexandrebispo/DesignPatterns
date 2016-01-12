@@ -4,34 +4,8 @@ namespace DP\Elements;
 
 use DP\Contracts\FormElement;
 
-class Input implements FormElement
+class Input extends AbstractField implements FormElement
 {
-    protected $attributes = [];
-
-    public function __construct(array $attributes = array())
-    {
-        $this->attributes = $attributes;
-    }
-
-    public function setType($type)
-    {
-        $this->attributes['type'] = $type;
-
-        return $this;
-    }
-
-    public function setClass($class)
-    {
-        $this->attributes['class'] = $class;
-
-        return $this;
-    }
-
-    public function getClass()
-    {
-        return $this->attributes['class'] ?? null;
-    }
-
     public function getType()
     {
         return $this->attributes['type'] ?? null;

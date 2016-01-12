@@ -2,10 +2,21 @@
 
 namespace DP;
 
-use DP\Contracts\FormElement;
+use DP\Contracts\{FormElement, FormInterface};
 
-class Form implements FormElement
+class Form implements FormElement, FormInterface
 {
+    protected $validator;
+
+    /**
+     * Form constructor.
+     * @param Validator $validator
+     */
+    public function __construct(Validator $validator)
+    {
+        $this->validator = $validator;
+    }
+
     protected $method = "POST";
     protected $action = "/";
 
@@ -72,6 +83,22 @@ class Form implements FormElement
     }
 
     /**
+     * @param string $fieldName
+     * @param array $fieldAttributes
+     * @return bool|FormElement
+     */
+    public function createField($fieldName, $fieldAttributes = [])
+    {
+        $namespace = "DP\\Elements\\";
+        $classname = $namespace . ucfirst(strtolower($fieldName));
+        if(class_exists($classname)) {
+            return new $classname($fieldAttributes);
+        }
+
+        return false;
+    }
+
+    /**
      * Prints an HTML form
      *
      */
@@ -83,4 +110,13 @@ class Form implements FormElement
         }
         echo'</form>';
     }
+
+    /**
+     * @return Validator
+     */
+    public function getValidator()
+    {
+        return $this->validator;
+    }
+
 }

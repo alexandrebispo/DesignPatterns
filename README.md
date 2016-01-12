@@ -1,6 +1,6 @@
 #Formulário Dinâmico
 
-Projeto desenvolvido como demonstração para alunos do curso Design Patterns da School of Net
+Projeto desenvolvido como demonstração para alunos do curso Design Patterns da School of Net e também foi feito como exemplo e não como um projeto completo. Os alunos devem se esforçar para entregar o projeto com mais funcionalidades e recursos.
 
 O projeto está dividido em Branches Master, Fase2 e Fase3. A Fase4 não foi desenvolvida pois é um desafio para os alunos.
 
