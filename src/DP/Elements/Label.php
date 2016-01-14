@@ -14,7 +14,7 @@ class Label extends AbstractField implements FormElement
      */
     public function getText()
     {
-        return $this->text;
+        return $this->attributes['text'] ?? null;
     }
 
     /**
@@ -23,7 +23,7 @@ class Label extends AbstractField implements FormElement
      */
     public function setText($text)
     {
-        $this->text = $text;
+        $this->attributes['text'] = $text;
 
         return $this;
     }
@@ -33,7 +33,7 @@ class Label extends AbstractField implements FormElement
      */
     public function getFor()
     {
-        return $this->for;
+        return $this->attributes['for'] ?? null;
     }
 
     /**
@@ -42,7 +42,7 @@ class Label extends AbstractField implements FormElement
      */
     public function setFor($for)
     {
-        $this->for = $for;
+        $this->attributes['for'] = $for;
 
         return $this;
     }
